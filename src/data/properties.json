@@ -1,0 +1,44 @@
+[
+  {
+  "Id": 1,
+  "Name": "Peugeot 307",
+  "Type": "Manual",
+  "Price": "7400 zł",
+  "Image": "assets/pegot.jpg"
+  },
+  {
+    "Id": 2,
+    "Name": "Gold IV",
+    "Type": "Manual",
+    "Price": "4900 zł",
+    "Image": "assets/golf.jpg"
+  },
+  {
+    "Id": 3,
+    "Name": "Honda Civic VI",
+    "Type": "Manual",
+    "Price": "2300 zł",
+    "Image": "assets/honda.jpg"
+  },
+  {
+    "Id": 4,
+    "Name": "Mustang",
+    "Type": "Manual",
+    "Price": "21 323 zł",
+    "Image": "assets/mustang.jpg"
+  },
+  {
+    "Id": 5,
+    "Name": "Subaru Impreza WRX",
+    "Type": "Manual",
+    "Price": "33 200 zł",
+    "Image": "assets/subaru.jpg"
+  },
+  {
+    "Id": 6,
+    "Name": "Toyota Supra",
+    "Type": "Manual",
+    "Price": "94 500 zł",
+    "Image": "assets/supra.jpg"
+  }
+]
