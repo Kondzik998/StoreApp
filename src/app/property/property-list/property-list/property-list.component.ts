@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarsiService } from 'src/app/services/carsi.service';
+import { Iproperty } from './Iproperty.interface';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-property-list',
@@ -7,10 +9,10 @@ import { CarsiService } from 'src/app/services/carsi.service';
   styleUrls: ['./property-list.component.css']
 })
 export class PropertyListComponent implements OnInit {
+  SellRent = 1;
+  constructor(private route: ActivatedRoute, private carsiService: CarsiService ) { }
 
-  constructor( private carsiService: CarsiService ) { }
-
-  Properties: any;
+  Properties: Iproperty[];
   ngOnInit(): void {
 
     this.carsiService.getAllProperties().subscribe(
@@ -22,7 +24,7 @@ export class PropertyListComponent implements OnInit {
           {
             console.log(error);
           }
-    )
+    );
     // this.http.get('data/properties.json').subscribe(
     //   data => {
     //     this.Properties = data;
