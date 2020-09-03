@@ -8,16 +8,15 @@ import { Iproperty } from '../property/property-list/property-list/Iproperty.int
   providedIn: 'root'
 })
 export class CarsiService {
-
 constructor(private http: HttpClient) { }
 
-  getAllProperties(): Observable<Iproperty[]>{
+  getAllProperties(SellRent: number): Observable<Iproperty[]>{
     return this.http.get('data/properties.json').pipe(
       map(data => {
         const PropertiesArray: Array<Iproperty> = [];
         for (const id in data)
         {
-          if (data.hasOwnProperty(id))
+          if (data.hasOwnProperty(id) && data[id].SellRent === SellRent)
           {
             PropertiesArray.push(data[id]);
           }

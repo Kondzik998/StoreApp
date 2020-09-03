@@ -14,11 +14,15 @@ export class PropertyListComponent implements OnInit {
 
   Properties: Iproperty[];
   ngOnInit(): void {
-
-    this.carsiService.getAllProperties().subscribe(
+    if (this.route.snapshot.url.toString()){
+      this.SellRent = 2;
+    }
+    this.carsiService.getAllProperties(this.SellRent).subscribe(
         data =>
           {
             this.Properties = data;
+            console.log(this.route.snapshot.url.toString());
+            console.log(data);
           },
           error =>
           {

@@ -36,3 +36,14 @@
 .animate{
   transition: all 0.3s ease-in-out;
 }
+
+.description-text{
+  font-family: sans-serif;
+}
+
+.propName{
+  font-family: Roboto-Bold;
+  src:url(/src/assets/fonts/Roboto-Bold.ttf);
+  font-size: 29px;
+  font-weight: 700;
+}

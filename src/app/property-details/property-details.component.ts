@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CarsiService } from '../services/carsi.service';
+import { Iproperty } from '../property/property-list/property-list/Iproperty.interface';
 
 @Component({
   selector: 'app-property-details',
@@ -10,7 +12,7 @@ export class PropertyDetailsComponent implements OnInit {
  public propertyId: number;
   constructor(private route: ActivatedRoute, private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.propertyId = this.route.snapshot.params['id'];
 
     this.route.params.subscribe(

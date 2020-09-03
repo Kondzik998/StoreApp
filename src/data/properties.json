@@ -2,43 +2,49 @@
   {
   "Id": 1,
   "Name": "Peugeot 307",
+  "SellRent": 1,
   "Type": "Manual",
-  "Price": "7400 zł",
+  "Price": "7400",
   "Image": "assets/pegot.jpg"
   },
   {
     "Id": 2,
     "Name": "Gold IV",
+    "SellRent": 2,
     "Type": "Manual",
-    "Price": "4900 zł",
+    "Price": "4900",
     "Image": "assets/golf.jpg"
   },
   {
     "Id": 3,
     "Name": "Honda Civic VI",
+    "SellRent": 1,
     "Type": "Manual",
-    "Price": "2300 zł",
+    "Price": "2300",
     "Image": "assets/honda.jpg"
   },
   {
     "Id": 4,
     "Name": "Mustang",
+    "SellRent": 1,
     "Type": "Manual",
-    "Price": "21 323 zł",
+    "Price": "21 323",
     "Image": "assets/mustang.jpg"
   },
   {
     "Id": 5,
     "Name": "Subaru Impreza WRX",
     "Type": "Manual",
-    "Price": "33 200 zł",
+    "SellRent": 1,
+    "Price": "33 200",
     "Image": "assets/subaru.jpg"
   },
   {
     "Id": 6,
     "Name": "Toyota Supra",
+    "SellRent": 1,
     "Type": "Manual",
-    "Price": "94 500 zł",
+    "Price": "94 500",
     "Image": "assets/supra.jpg"
   }
 ]
