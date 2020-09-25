@@ -1,5 +1,5 @@
 .card:hover img{
-  transform: scale(1.2,1.2);
+  transform: scale(1.1,1.1);
   transition-duration: 500ms;
   transition-timing-function: ease-out;
   height: 250px;
@@ -18,6 +18,9 @@
   position: relative;
 }
 
+.card{
+  border: 0 !important;
+}
 .member-icons{
   position: absolute;
   bottom: -10%;
@@ -37,13 +40,24 @@
   transition: all 0.3s ease-in-out;
 }
 
-.description-text{
-  font-family: sans-serif;
+.description{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.propName{
-  font-family: Roboto-Bold;
-  src:url(/src/assets/fonts/Roboto-Bold.ttf);
-  font-size: 29px;
-  font-weight: 700;
+.propPrice{
+  color: rgb(151, 21, 16);
+  font-weight: 900;
 }
+
+.fas, .fab{
+  padding-right: 10px;
+}
+
+.buybtn{
+  margin-top: 40px;
+  margin-bottom: -10px;
+}
+

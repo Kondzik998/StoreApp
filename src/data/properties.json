@@ -5,7 +5,7 @@
   "SellRent": 1,
   "Type": "Manual",
   "Price": "7400",
-  "Image": "assets/pegot.jpg"
+  "Image": "pegot.jpg"
   },
   {
     "Id": 2,
@@ -13,7 +13,7 @@
     "SellRent": 2,
     "Type": "Manual",
     "Price": "4900",
-    "Image": "assets/golf.jpg"
+    "Image": "golf.jpg"
   },
   {
     "Id": 3,
@@ -21,7 +21,7 @@
     "SellRent": 1,
     "Type": "Manual",
     "Price": "2300",
-    "Image": "assets/honda.jpg"
+    "Image": "honda.jpg"
   },
   {
     "Id": 4,
@@ -29,7 +29,7 @@
     "SellRent": 1,
     "Type": "Manual",
     "Price": "21 323",
-    "Image": "assets/mustang.jpg"
+    "Image": "mustang.jpg"
   },
   {
     "Id": 5,
@@ -37,7 +37,7 @@
     "Type": "Manual",
     "SellRent": 1,
     "Price": "33 200",
-    "Image": "assets/subaru.jpg"
+    "Image": "subaru.jpg"
   },
   {
     "Id": 6,
@@ -45,6 +45,6 @@
     "SellRent": 1,
     "Type": "Manual",
     "Price": "94 500",
-    "Image": "assets/supra.jpg"
+    "Image": "supra.jpg"
   }
 ]
