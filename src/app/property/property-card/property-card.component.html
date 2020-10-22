@@ -3,7 +3,7 @@
     <img *ngIf="property.Image" class="card-img-top" src="/assets/image/{{property.Image}}" alt="">
     <img *ngIf="!property.Image" class="card-img-top" src="/assets/image/noimage.png" alt="">
 
-    <ul class="list-inline text-center member-icons animate">
+    <ul *ngIf="!hideIcons" class="list-inline text-center member-icons animate">
       <li class="list-inline-item">
         <button class="btn btn-primary" routerLink='/property-details/{{property.Id}}'><i class="far fa-edit"></i></button>
       </li>
@@ -12,10 +12,26 @@
       </li>
     </ul>
   </div>
-    <div class="card-body p-2 description">
-      <span class="propPrice"><i class="fas fa-wallet"></i> {{ property.Price }} zł</span>
-      <span class="propName"><i class="fas fa-car"></i> {{ property.Name }}</span>
-      <span class="propType"><i class="fab fa-audible"></i>{{ property.Type }}</span>
-      <button class="btn btn-outline-success buybtn">Kup teraz!</button>
+    <div class="card-body p-1 card-desc">
+     <div class="propName">
+      <span><i class="fas fa-car"></i>
+        {{property.Name}}
+        {{property.Model}}</span>
+      <span class="propPrice"> <i class="fas fa-wallet"></i> {{property.Price}} zł</span>
+     </div>
+     <hr>
+     <div class="blockstyle mt-1">
+       <div>{{property.ProdYear}}</div> |
+        <div>{{property.Fuel}}</div>  |
+        <div>{{property.PType}}</div>
+     </div>
+     <div class="blockstyle mt-1">
+      <div>{{property.Capacity}}<span *ngIf="property.Capacity">cm3</span></div> |
+       <div>{{property.MechPower}}<span *ngIf="property.MechPower">km</span></div>  |
+       <div>{{property.CarBody}}</div>
     </div>
+    <button *ngIf="this.property.SellRent === 1" class="btn btn-outline-success buybtn">Kup teraz!</button>
+    <button *ngIf="this.property.SellRent === 2" class="btn btn-outline-success buybtn">Wypożycz!</button>
+    </div>
+
 </div>

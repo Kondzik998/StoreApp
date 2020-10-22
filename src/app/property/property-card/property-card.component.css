@@ -12,15 +12,16 @@
   transition-timing-function: ease-out;
   height: 250px;
 }
+.card{
+  min-height: 450px;
+  border: 0 !important;
+}
 
 .img-wrapper{
   overflow: hidden;
   position: relative;
 }
 
-.card{
-  border: 0 !important;
-}
 .member-icons{
   position: absolute;
   bottom: -10%;
@@ -40,24 +41,32 @@
   transition: all 0.3s ease-in-out;
 }
 
-.description{
+.card-desc{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .propPrice{
+  justify-content: flex-end;
   color: rgb(151, 21, 16);
   font-weight: 900;
 }
 
-.fas, .fab{
-  padding-right: 10px;
-}
-
 .buybtn{
   margin-top: 40px;
-  margin-bottom: -10px;
+  margin-bottom: -10%;
+  width:100%;
 }
 
+.propName{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.blockstyle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

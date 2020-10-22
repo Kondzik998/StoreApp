@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Iproperty } from '../property/property-list/property-list/Iproperty.interface';
+import { IpropertyBase } from '../model/ipropertybase';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +10,10 @@ import { Iproperty } from '../property/property-list/property-list/Iproperty.int
 export class CarsiService {
 constructor(private http: HttpClient) { }
 
-  getAllProperties(SellRent: number): Observable<Iproperty[]>{
+  getAllProperties(SellRent: number): Observable<IpropertyBase[]>{
     return this.http.get('data/properties.json').pipe(
       map(data => {
-        const PropertiesArray: Array<Iproperty> = [];
+        const PropertiesArray: Array<IpropertyBase> = [];
         for (const id in data)
         {
           if (data.hasOwnProperty(id) && data[id].SellRent === SellRent)

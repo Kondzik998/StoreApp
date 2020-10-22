@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CarsiService } from '../services/carsi.service';
-import { Iproperty } from '../property/property-list/property-list/Iproperty.interface';
 
 @Component({
   selector: 'app-property-details',
