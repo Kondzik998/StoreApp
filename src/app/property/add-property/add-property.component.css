@@ -6,3 +6,11 @@
   display: flex;
 }
 
+.prevView{
+  min-width: 450px !important;
+}
+
+.mainView{
+  min-width: 600px;
+}
+

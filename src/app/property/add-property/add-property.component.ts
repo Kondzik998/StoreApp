@@ -46,11 +46,7 @@ export class AddPropertyComponent implements OnInit {
       Name: [null, Validators.required],
       Price: [null, Validators.required],
       Model: [null, Validators.required],
-      ProdYear: [null, Validators.required],
-      Fuel: [null, Validators.required],
       Capacity: [null, Validators.required],
-      MechPower: [null, Validators.required],
-      CarBody: [null, Validators.required],
     });
   }
   onBack(){
@@ -63,10 +59,10 @@ export class AddPropertyComponent implements OnInit {
     console.log(this.addPropertyForm);
     if (this.addPropertyForm.valid)
     {
-      this.alertify.success('Pomyslne!');
+      this.alertify.success('Działa!');
     }
     else{
-      this.alertify.error('Nie dzial');
+      this.alertify.error('Nie działa!');
     }
   }
 
