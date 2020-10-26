@@ -21,7 +21,6 @@ export class PropertyListComponent implements OnInit {
         data =>
           {
             this.Properties = data;
-            console.log(this.route.snapshot.url.toString());
             console.log(data);
           },
           error =>

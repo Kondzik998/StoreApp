@@ -1,4 +1,6 @@
-export interface IpropertyBase {
+import { IpropertyBase } from './ipropertybase';
+
+export class Property implements IpropertyBase{
   Id: number;
   Name: string;
   SellRent: number;
@@ -12,4 +14,8 @@ export interface IpropertyBase {
   MechPower: number;
   Mileage: number;
   Image?: string;
+  Color?: string;
+  VIN?: string;
+  Description?: string;
+  PostedOn: string;
 }

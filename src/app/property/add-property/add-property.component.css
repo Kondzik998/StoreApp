@@ -4,6 +4,7 @@
 
 .flexik{
   display: flex;
+  justify-content: space-between;
 }
 
 .prevView{

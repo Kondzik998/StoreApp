@@ -8,7 +8,7 @@
         <form (ngSubmit)="onSubmit()" [formGroup]="addPropertyForm">
           <div class="tab-panel">
             <tabset class="member-tabset" #formTabs>
-              <tab heading="Informacje podstawowe">
+              <tab heading="Informacje podstawowe" formGroupName="BasicInfo">
                 <div class="form-group col-12">
                   <div class="btn-group mt-4" btnRadioGroup formControlName="SellRent">
                     <label class="btn btn-outline-primary mr-2" btnRadio="1" tabindex="0" role="button" name="SellRent">
@@ -18,48 +18,64 @@
                       Wypożyczam
                     </label>
                   </div>
+                  <div class="error-block" *ngIf="SellRent.invalid && isNextClicked">
+                    Musisz wybrać typ ogłoszenia dla tego samochodu!
+                  </div>
                 </div>
                 <div class="form-group col-12 mt-3">
                   <label for="Name">Marka pojazdu</label>
                   <input type="text" class="form-control" formControlName="Name" [(ngModel)]="propertyView.Name" />
+                  <div class="error-block" *ngIf="Name.invalid && isNextClicked">
+                    Musisz podać markę pojazdu!
+                  </div>
                 </div>
                 <div class="form-group col-12">
                   <label for="Model">Model pojazdu</label>
                   <input type="text" class="form-control" formControlName="Model" [(ngModel)]="propertyView.Model"/>
+                  <div class="error-block" *ngIf="Model.invalid && isNextClicked">
+                    Musisz podać model pojazu!
+                  </div>
                 </div>
                 <div class="form-group col-12">
                   <label for="Price">Cena</label>
                   <input type="text" class="form-control" formControlName="Price" [(ngModel)]="propertyView.Price"/>
+                  <div class="error-block" *ngIf="Price.invalid && isNextClicked">
+                    Musisz podać cenę!
+                  </div>
                 </div>
                 <div class="form-group col-12 flexik">
-                  <label class="mr-3">Rok produkcji</label>
-                  <input type="text" class="form-control mr-4" name="ProdYear"
-                    [(ngModel)]="propertyView.ProdYear" [ngModelOptions]="{standalone: true}"/>
-                  <label>Przebieg(km)</label>
-                  <input type="text" class="form-control ml-3 mr-3" name="Mileage" />
+                  <div class="flexik col-6" style="margin-left: -3%">
+                    <label class="mr-3">Rok produkcji</label>
+                  <input type="text" class="form-control mr-4" formControlName="ProdYear"
+                    [(ngModel)]="propertyView.ProdYear"/>
+                  </div>
+                  <div class="flexik col-6" style="margin-right: -30px;">
+                    <label>Przebieg(km)</label>
+                  <input type="text" class="form-control ml-3 mr-3" formControlName="Mileage"/>
+                  </div>
                 </div>
                 <div class="form-group col-12 flexik">
                   <label>Kolor</label>
-                  <input type="text" class="form-control ml-2 mr-3" />
+                  <input type="text" class="form-control ml-2 mr-3" formControlName="Color"/>
                   <label>VIN</label>
-                  <input type="text" class="form-control ml-2" />
+                  <input type="text" class="form-control ml-2"  formControlName="VIN"/>
                 </div>
 
                 <div class="form-group col-12">
-                  <button type="button" class="btn btn-primary btn-block mt-5" (click)="selectTab(1)">
+                  <button type="button" class="btn btn-primary btn-block mt-5" (click)="selectTab(1, BasicInfo.valid)">
                     Dalej
                   </button>
                 </div>
               </tab>
-              <tab heading="Informacje dodatkowe">
+              <tab heading="Informacje dodatkowe" formGroupName="DetailsInfo">
                 <div class="form-group col-12 mt-3">
                   <label>Opis</label>
-                  <textarea type="text" class="form-control" rows="4"></textarea>
+                  <textarea type="text" class="form-control" rows="4" formControlName="Description"></textarea>
                 </div>
                 <div class="form-group col-12">
                   <div>
                     <p>Rodzaj paliwa</p>
-                    <div class="btn-group" btnRadioGroup name="Fuel" [(ngModel)]="propertyView.Fuel" [ngModelOptions]="{standalone: true}">
+                    <div class="btn-group" btnRadioGroup formControlName="Fuel" [(ngModel)]="propertyView.Fuel">
                       <label *ngFor="
                           let fuel of ['Benzyna', 'Diesel', 'Elektryczny']
                         " class="btn btn-outline-primary mr-2" [btnRadio]="fuel" tabindex="0" role="button">
@@ -69,7 +85,7 @@
                   </div>
                   <div class="mt-2">
                     <p>Skrzynia biegów</p>
-                    <div class="btn-group" btnRadioGroup formControlName="PType" [(ngModel)]="propertyView.PType">
+                    <div class="btn-group" btnRadioGroup formControlName="Transmission" [(ngModel)]="propertyView.Transmission">
                       <label *ngFor="let ptype of ['Manualna', 'Automatyczna']" class="btn btn-outline-primary mr-2"
                         [btnRadio]="ptype" tabindex="0" role="button">
                         {{ ptype }}
@@ -78,7 +94,7 @@
                   </div>
                   <div class="mt-2">
                     <p>Typ nadwozia</p>
-                    <div class="btn-group" btnRadioGroup name="CarBody" [(ngModel)]="propertyView.CarBody" [ngModelOptions]="{standalone: true}">
+                    <div class="btn-group" btnRadioGroup formControlName="CarBody" [(ngModel)]="propertyView.CarBody">
                       <label *ngFor="
                           let cbody of [
                             'Sedan',
@@ -95,33 +111,33 @@
                   <div>
                     <label>Pojemność(ccm)</label>
                     <input type="text" class="form-control mr-3" formControlName="Capacity"
-                      [(ngModel)]="propertyView.Capacity" />
+                      [(ngModel)]="propertyView.Capacity"/>
                   </div>
                   <div>
                     <label>Moc(KM)</label>
-                    <input type="text" class="form-control" name="MechPower"
-                      [(ngModel)]="propertyView.MechPower" [ngModelOptions]="{standalone: true}"/>
+                    <input type="text" class="form-control" formControlName="MechPower"
+                      [(ngModel)]="propertyView.MechPower"/>
                   </div>
                 </div>
                 <div class="form-group col-12">
-                  <button type="button" class="btn btn-primary btn-block mt-5" (click)="selectTab(2)">
+                  <button type="button" class="btn btn-primary btn-block mt-5" (click)="selectTab(2, DetailsInfo.valid)">
                     Dalej
                   </button>
-                  <button type="button" class="btn btn-primary btn-block mt-2" (click)="selectTab(0)">
+                  <button type="button" class="btn btn-primary btn-block mt-2" (click)="selectTab(0, true)">
                     Wróć
                   </button>
                 </div>
               </tab>
-              <tab heading="Zdjecia">
+              <tab heading="Zdjecia" >
                 <div class="photo-control">
                   <button class="mt-5" type="button">Upload</button> <br />
                   W budowie
                 </div>
                 <div class="form-group col-12">
-                  <button type="button" class="btn btn-primary btn-block mt-5 mb-1" (click)="selectTab(1)">
+                  <button type="button" class="btn btn-primary btn-block mt-5 mb-1" (click)="selectTab(1,  true)">
                     Wróć
                   </button>
-                  <button type="reset" class="btn btn-secondary col-12">
+                  <button type="reset" class="btn btn-secondary col-12" (click)="selectTab(0, true)">
                     Resetuj
                   </button>
                   <button type="submit" class="btn btn-primary col-12 mt-1">
